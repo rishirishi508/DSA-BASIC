@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Node structure
 struct Node {
     int data;
     struct Node* next;
@@ -27,7 +26,6 @@ void insertAtEnd(struct Node** head, int data) {
     temp->next = newNode;
 }
 
-// Insert at a specific position
 void insertAtPosition(struct Node** head, int data, int position) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     struct Node* temp = *head;
@@ -51,7 +49,6 @@ void insertAtPosition(struct Node** head, int data, int position) {
     temp->next = newNode;
 }
 
-// Delete from beginning
 void deleteFromBeginning(struct Node** head) {
     if (*head == NULL) {
         printf("List is empty!\n");
@@ -62,7 +59,6 @@ void deleteFromBeginning(struct Node** head) {
     free(temp);
 }
 
-// Delete from end
 void deleteFromEnd(struct Node** head) {
     if (*head == NULL) {
         printf("List is empty!\n");
@@ -82,7 +78,6 @@ void deleteFromEnd(struct Node** head) {
     free(temp);
 }
 
-// Delete from a specific position
 void deleteFromPosition(struct Node** head, int position) {
     if (*head == NULL) {
         printf("List is empty!\n");
@@ -111,7 +106,6 @@ void deleteFromPosition(struct Node** head, int position) {
     free(temp);
 }
 
-// Reverse the linked list
 void reverseList(struct Node** head) {
     struct Node *prev = NULL, *current = *head, *next = NULL;
     while (current != NULL) {
@@ -123,7 +117,6 @@ void reverseList(struct Node** head) {
     *head = prev;
 }
 
-// Display the linked list
 void printList(struct Node* head) {
     if (head == NULL) {
         printf("List is empty!\n");
@@ -138,7 +131,6 @@ void printList(struct Node* head) {
     printf("NULL\n");
 }
 
-// Main function
 int main() {
     struct Node* head = NULL;
     int choice, data, position;
